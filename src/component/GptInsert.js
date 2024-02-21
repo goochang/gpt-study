@@ -11,29 +11,28 @@ function GptInsert({
     }
 
     const insert = async function () {
-
+        onInsert(value, "user");
+        setValue("");
         try {
-            const response = await fetch('./api/generate', {
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${process.env.REACT_APP_API_KEY}`, // YOUR_API_KEY는 실제 API 키로 대체되어야 합니다.
                 },
-                body: JSON.stringify({ question: value }),
+                body: JSON.stringify({
+                    model: "gpt-3.5-turbo",
+                    messages: [{"role": "user", "content": value}],
+                    // max_tokens: 150,
+                }),
             });
 
             const data = await response.json();
-            if (response.status !== 200) {
-                throw (
-                    data.error ||
-                    new Error(`request failed with status ${response.status}`)
-                );
-            }
+            console.log(data);
+            const content = data.choices[0] && data.choices[0].message.content.replace(/\n/g, "<br />");
 
-            // setAnswer(data.result);
-            // setQuestion('');
+            onInsert(content, "ai");
 
-            onInsert(value);
-            setValue("");
         } catch (error) {
             console.error(error);
             alert(error.message);

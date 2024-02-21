@@ -9,6 +9,7 @@ function GptList({
         <div className="GptList">
             {lists && lists.map((list, index) => (
                 <GptListItem
+                    key={index}
                     list={list}
                 />
             ))}

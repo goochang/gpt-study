@@ -6,6 +6,7 @@ import GptList from './component/GptList';
 import { useRef, useState } from 'react';
 
 function App() {
+
   const [lists, setLists] = useState([
     {
       id: 1,
@@ -15,8 +16,8 @@ function App() {
 
   const nextId = useRef(2);
 
-  const onInsert = function(text) {
-    setLists([...lists, {id: nextId.current, text: text}]);
+  const onInsert = function(text, role) {
+    setLists((lists)=> [...lists, {id: nextId.current, text: text, role: role}]);
     nextId.current += 1;
   }
 

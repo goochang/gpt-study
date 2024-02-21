@@ -3,12 +3,24 @@ import "./GptListItem.scss";
 function GptListItem({
     list,
 }) {
-    const { id, text } = list;
+    const { id, text, role } = list;
     return (
         <div className="GptListItem-virtualized" >
-            <li className="GptListItem">
-               { text }
-            </li>
+            {
+                role &&
+                <div className="GptListItemHeader">
+                {
+                    role == "user" ?
+                    <>You</>
+                    :
+                    <>OpenAI</>
+                }
+            </div>
+            }
+            
+            <div className="GptListItem" dangerouslySetInnerHTML={{ __html: text }}>
+               
+            </div>
         </div>
     )
 }
