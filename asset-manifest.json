@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/gpt-study/static/css/main.a429ec96.css",
+    "main.js": "/gpt-study/static/js/main.8732d74f.js",
+    "static/js/592.59ebd73d.chunk.js": "/gpt-study/static/js/592.59ebd73d.chunk.js",
+    "static/media/logo.svg": "/gpt-study/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/gpt-study/index.html",
+    "main.a429ec96.css.map": "/gpt-study/static/css/main.a429ec96.css.map",
+    "main.8732d74f.js.map": "/gpt-study/static/js/main.8732d74f.js.map",
+    "592.59ebd73d.chunk.js.map": "/gpt-study/static/js/592.59ebd73d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a429ec96.css",
+    "static/js/main.8732d74f.js"
+  ]
+}
